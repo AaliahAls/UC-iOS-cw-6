@@ -8,24 +8,12 @@
 import SwiftUI
 
 struct SecondView: View {
-    @Binding var color : String
+    @Binding var color : Color
     @Binding var text : String
     var body: some View {
         ZStack{
-            if color == "red" {
-                Color.red
-                    .opacity(0.5)
-            } else if color == "blue" {
-                Color.blue
-                    .opacity(0.5)
-            } else if color == "green" {
-                Color.green
-                    .opacity(0.5)
-            } else {
-                Color.yellow
-                    .opacity(0.5)
-            }
-            
+            color
+                .opacity(0.5)
             Text(text)
         
         } .ignoresSafeArea()
@@ -34,6 +22,6 @@ struct SecondView: View {
 
 struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondView(color: .constant(""), text: .constant(""))
+        SecondView(color: .constant(Color.gray), text:.constant("") )
     }
 }
